@@ -12,7 +12,20 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      textShadow: {
+        "blue-glow":
+          "0 0 8px rgba(0, 0, 255, 0.6), 0 0 16px rgba(0, 0, 255, 0.6), 0 0 32px rgba(0, 0, 255, 0.6)",
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".text-shadow-blue-glow": {
+          textShadow:
+            "0 0 8px rgba(0, 0, 255, 0.6), 0 0 16px rgba(0, 0, 255, 0.6), 0 0 32px rgba(0, 0, 255, 0.6)",
+        },
+      });
+    },
+  ],
 };
